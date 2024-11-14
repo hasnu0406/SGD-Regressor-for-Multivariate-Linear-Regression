@@ -9,17 +9,29 @@ To write a program to predict the price of the house and number of occupants in 
 
 ## Algorithm
 1.Load the California Housing dataset using fetch_california_housing().
+
 2.Prepare the features 'x' (first 3 columns) and targets 'y' (column 6 and target).
+
 3.Split the data into training and testing sets using train_test_split().
+
 4.Initialize StandardScaler for scaling features and targets (scaler_x and scaler_y).
+
 5.Scale the input features (x_train, x_test) using scaler_x.fit_transform() and scaler_x.transform().
+
 6.Scale the target values (y_train, y_test) using scaler_y.fit_transform() and scaler_y.transform().
+
 7.Initialize the SGDRegressor model with max_iter=1000 and tol=1e-3.
+
 8.Wrap SGDRegressor with MultiOutputRegressor to handle multiple target variables.
+
 9.Fit the model on the training data: multi_output_sgd.fit(x_train, y_train).
+
 10.Predict the target values for the test set using the trained model: multi_output_sgd.predict(x_test).
+
 11.Inverse transform the predicted values and actual values to their original scales.
+
 12.Calculate the Mean Squared Error (MSE) between the predicted and actual target values.
+
 13.Print the MSE and display the first five predicted values.
 
 
